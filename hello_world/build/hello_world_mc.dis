@@ -1,0 +1,23 @@
+
+build/hello_world_mc.o:     file format elf64-littleaarch64
+
+SYMBOL TABLE:
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .data	0000000000000000 .data
+0000000000000000 l    d  .bss	0000000000000000 .bss
+0000000000000000 l    d  .rodata	0000000000000000 .rodata
+0000000000000000 l       .rodata	0000000000000000 my_msg
+0000000000000000 g       .text	0000000000000018 hello_world_main
+0000000000000000         *UND*	0000000000000000 printf
+
+
+
+Disassembly of section .text:
+
+0000000000000000 <hello_world_main>:
+   0:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+   4:	10000000 	adr	x0, 0 <hello_world_main>
+   8:	94000000 	bl	0 <printf>
+   c:	1a8003e0 	.word	0x1a8003e0
+  10:	a8c17bfd 	ldp	x29, x30, [sp], #16
+  14:	d65f03c0 	ret
